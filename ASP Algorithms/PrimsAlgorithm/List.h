@@ -52,7 +52,15 @@ public:
 		}
 		cout << endl;
 	}
-
+	bool Sadrzi(T v)
+	{
+		for (int i = 0; i < brojac; i++)
+		{
+			if (N[i] == v)
+				return true;
+		}
+		return false;
+	}
 	T& Get(int i)
 	{
 		if (i  > brojac)

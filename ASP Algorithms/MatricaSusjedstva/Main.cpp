@@ -6,7 +6,7 @@ using namespace std;
 void main(){
 	MatricaSusjedstva s(5);
 	int vrh = 2;
-	s.UcitajMatricuFromFile("C:\\Users\\Emir\\Desktop\\Matrica.txt");
+	s.UcitajMatricuFromFile("..."); // Lokacija fajla Matrica.txt
 	s.ispisMatrice();
 	cout <<"Izlazni stepen vrha -> "<< s.izlazniStepen(vrh)<<endl;
 	cout << "Vrhovi koji su vrhu \"vrh\" susjedi -> ";
