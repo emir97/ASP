@@ -70,7 +70,7 @@ public:
 			beforeInfo->GetNextNode() = info->GetNextNode();
 		}
 		else {
-			head = nullptr;
+			head = head->GetNextNode();
 		}
 		T v = info->GetValue();
 		delete info;
