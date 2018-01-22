@@ -57,7 +57,7 @@ public:
 	T RemoveValue(T value){
 		if (isEmpty()) throw exception("Lista je prazna");
 
-		bool success = true;
+
 		Node<T> *info = head;
 		Node<T> *beforeInfo = nullptr;
 		while (info->GetNextNode() &&  info->GetValue() != value)
@@ -65,12 +65,12 @@ public:
 			beforeInfo = info;
 			info = info->GetNextNode();
 		}
-		if (info->GetValue() != value) return 2;
+		if (info->GetValue() != value) throw exception("Element ne postoji");
 		if (beforeInfo != nullptr){
 			beforeInfo->GetNextNode() = info->GetNextNode();
 		}
 		else {
-			head = nullptr;
+			head = head->GetNextNode();
 		}
 		T v = info->GetValue();
 		delete info;
