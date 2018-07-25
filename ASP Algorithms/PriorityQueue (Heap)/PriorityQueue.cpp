@@ -1,7 +1,7 @@
-#pragma once
+#ifndef PQ_H
+#define PQ_H
 
 #include "PrioritetniRed.h"
-#include "UsporedbaGeneric.h"
 
 template <class Tip>
 class PrioritetniRedHeap : public PrioritetniRed<Tip>
@@ -54,7 +54,7 @@ class PrioritetniRedHeap : public PrioritetniRed<Tip>
 			BubbleUp(roditelj);
 		}
 	}
-	
+
 	void prosiriPR()
 	{
 		int newMax = max * 2;
@@ -69,7 +69,7 @@ class PrioritetniRedHeap : public PrioritetniRed<Tip>
 		cout << "\nPR: rekonstrukcija - nova velicina je " << newMax << endl;
 	}
 public:
-	PrioritetniRedHeap(int max=3)
+	PrioritetniRedHeap(int max = 3)
 	{
 		this->max = max;
 		N = new Tip[max];
@@ -77,7 +77,7 @@ public:
 	}
 	void add(Tip v)
 	{
-		if (brojac == max-1)
+		if (brojac == max - 1)
 			prosiriPR();
 
 		brojac++;
@@ -90,7 +90,7 @@ public:
 	{
 		if (isPrazan())
 			throw exception("Greska. Nije moguce ukloniti elemenat iz praznog pr. reda.");
-		
+
 		Tip x = N[1];
 		N[1] = N[brojac];
 		brojac--;
@@ -113,3 +113,5 @@ public:
 	}
 };
 
+
+#endif // !PQ_H
