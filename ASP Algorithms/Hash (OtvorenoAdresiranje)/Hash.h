@@ -42,6 +42,7 @@ public:
 		}
 		Niz[i] = k;
 		zauzeto[i] = true;
+		brojac++;
 	}
 
 	bool Ukloni(T k)
@@ -58,7 +59,7 @@ public:
 				if (Niz[i] == k)
 				{
 					zauzeto[i] = false;
-					cout << "uklonjeno " << k << endl;
+					brojac--;
 					return true;
 				}
 			}
